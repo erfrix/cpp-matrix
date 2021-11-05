@@ -14,12 +14,12 @@ CHECK DIFFRENT PROPERTIES OF A MATRIX:
 - ```is_lower_triangular {name}``` : Checks if lower triangular
 - ```is_triangular {name}``` : Checks both triangularity and tells you
 - ```is_identity {name}``` : Checks identity
-- ```is_normal_symmetric {name}``` :  Checks normal symmetricity
-- ```is_skew_symmetric {name}``` : Checks skew symmetricity
-- ```is_symmetric {name}``` :  Checks both symmetricity and tells you
+- ```is_normal_symmetric {name}``` :  Checks normal symmetricity * *(NOT IMPLEMENTED)
+- ```is_skew_symmetric {name}``` : Checks skew symmetricity * *(NOT IMPLEMENTED)
+- ```is_symmetric {name}``` :  Checks both symmetricity and tells you * *(NOT IMPLEMENTED)
 
 OPERATIONS ON MATRIXES:
-- ```inverse {name}``` : Inverses the matrix {name}
-- ```inverse {name1}``` {name2} :  Copies the inverse of matrix {name1} to {name2}
-- ```delete {name}``` : Deletes the matrix
-- ```change {name}``` {row} {column} {value} : Changes the value of element [{row}][{column}] in matrix {name}
+- ```inverse {name}``` : Inverses the matrix {name} * *(NOT IMPLEMENTED)
+- ```inverse {name1}``` {name2} :  Copies the inverse of matrix {name1} to {name2} * *(NOT IMPLEMENTED)
+- ```delete {name}``` : Deletes the matrix * *(NOT IMPLEMENTED)
+- ```change {name}``` {row} {column} {value} : Changes the value of element [{row}][{column}] in matrix {name} * *(NOT IMPLEMENTED)
