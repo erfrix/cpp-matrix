@@ -1,3 +1,13 @@
+// Mohammad Erfan Hamidi Moghadam
+// Ex-1 Advanced Programming
+
+// Issues:
+//  - lacks error checking for similar names and commands
+//  - lacks functions : 
+//    delete - change - inverse - is_normal_symmetric
+//    is_skew_symmetric - is_symmetric
+//
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -507,7 +517,7 @@ int input()
     }
 }
 
-int main()
+int main(int argc, char *argv[])
 {
     while (1)
     {
