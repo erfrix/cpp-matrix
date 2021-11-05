@@ -2,7 +2,7 @@
 A Program that can inputs multiple matrixes and can check their properties or make changes on them.
 [USAGE]
 
-<h3>ADDING MATRIXES:<\h3>\
+ADDING MATRIXES:\
 add matrix {name} {rows} {columns} --> asks you for each element individually\
 add matrix {name} {rows} {columns} [a,b,c,d,....] (elements in order) --> direct input to matrix from brackets\
 add matrix {name} {number} --> creates a matrix with equal rows and columns with size {number} then asks for each element\
