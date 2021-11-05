@@ -1,6 +1,5 @@
 # cpp-matrix
-A simple program to input matrixes via command line like input and also check the propertries of those matrixes.
-
+A Program that inputs multiple matrixes and can check their properties or make changes on them.
 [USAGE]
 
 ADDING MATRIXES:\
