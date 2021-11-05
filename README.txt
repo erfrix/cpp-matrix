@@ -17,6 +17,8 @@ is_identity {name} : Checks identity
 is_normal_symmetric {name} :  Checks normal symmetricity
 is_skew_symmetric {name} : Checks skew symmetricity
 is_symmetric {name} :  Checks both symmetricity and tells you
+
+OPERATIONS ON MATRIXES:
 inverse {name} : Inverses the matrix {name}
 inverse {name1} {name2} :  Copies the inverse of matrix {name1} to {name2}
 delete {name} : Deletes the matrix
