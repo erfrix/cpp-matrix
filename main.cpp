@@ -273,21 +273,20 @@ int input()
     // Loop for getting each word out
     while (dl_position != string::npos)
     {
+        //Parsing each word
         dl_position = input_command.find(delimeter);   // finding the posistion of the first delimeter = " "
         parsed = input_command.substr(0, dl_position); // Extracting the word
         // cout <<"Parsed word: "<< parsed << endl;
-        input_command.erase(0, dl_position + 1); // We erase before the delimeter so the loop works
+        input_command.erase(0, dl_position + 1); // We erase before the delimeter so the loop works Ex: Hello Ali --> Ali
 
         if (parsed == "add")
         {
             flag_add = true; // so if the second parsed word is matrix we can add a matrix
-            cout << "//GOT ADD" << endl;
             continue;
         }
 
         if (parsed == "matrix" && flag_add)
         {
-            cout << "//GOT MATRIX" << endl;
             flag_matrix = true;
             continue;
         }
@@ -299,14 +298,14 @@ int input()
             {
                 matrixes[num_current_matrix].name = parsed;
                 got_name = true;
-                cout << "//GOT NAME : " << matrixes[num_current_matrix].name << endl;
+                //cout << "//GOT NAME : " << matrixes[num_current_matrix].name << endl;
                 continue;
             }
         }
         // GET THE ROW
         if (got_name)
         {
-            // dl_position == string::npos
+            // if there is only the row number at last input then we just go straight to getting the elements with funtion insertElements_singular
             if (dl_position == string::npos && got_rows == false) // if we are at the last word - if we didn't find any white spaces
             {
                 matrixes[num_current_matrix].rows = stoi(parsed);
@@ -315,22 +314,12 @@ int input()
                 got_cols = true;
                 matrixes[num_current_matrix].is_square = true;
                 insertElements_singular();
-                showMatr(matrixes[num_current_matrix].name);
-
-                cout << "Square ! - type 1 - singular" << endl;
-                cout << "--------------------------------" << endl;
-                cout << "Name : " << matrixes[num_current_matrix].name << endl;
-                cout << "Rows : " << matrixes[num_current_matrix].rows << endl;
-                cout << "Columns : " << matrixes[num_current_matrix].cols << endl;
-                cout << "Square : " << matrixes[num_current_matrix].is_square << endl;
-                cout << "--------------------------------" << endl;
 
                 num_current_matrix++;
                 break;
             }
             else if (got_rows == false)
             {
-                cout << "In rows" << endl;
                 matrixes[num_current_matrix].rows = stoi(parsed);
                 cout << matrixes[num_current_matrix].rows << endl;
                 got_rows = true;
@@ -340,7 +329,8 @@ int input()
         // GET THE COLUMN
         if (got_rows)
         {
-            cout << "In getting cols" << endl;
+            //If there is a bracket the Matrix is square.
+            // Then we pass the parsed bracket to the suitable function to get the elements from it.
             if (parsed.find("[") != string::npos && got_cols == false)
             {
                 cout << "Found [" << endl;
@@ -362,7 +352,7 @@ int input()
                 continue;
             }
         }
-
+        //GET THE ELEMENTS
         if (got_cols)
         {
             if (matrixes[num_current_matrix].rows == matrixes[num_current_matrix].cols) // Checking if the matrix is square.
@@ -410,16 +400,24 @@ int input()
             }
         }
 
+        if(parsed == "show")
+        {
+            dl_position = input_command.find(delimeter);   // finding the posistion of the first delimeter = " "
+            parsed = input_command.substr(0, dl_position); // Extracting the word
+            input_command.erase(0, dl_position + 1);
+
+            showMatr(parsed);
+            break;
+        }
         // is_diagonal :
         if (parsed == "is_diagonal")
         {
             dl_position = input_command.find(delimeter);   // finding the posistion of the first delimeter = " "
             parsed = input_command.substr(0, dl_position); // Extracting the word
-            cout << "Parsed word: " << parsed << endl;
             input_command.erase(0, dl_position + 1);
 
             is_diagonal(parsed);
-            continue;
+            break;
         }
 
         // is_triangular
